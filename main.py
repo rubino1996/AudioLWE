@@ -12,7 +12,7 @@ from plotting import plot_signals
 
 # Load the audio file
 sample_freq, n_samples, signal_array = load_audio(
-    r"C:\Users\ruben\Documents\NAU\PhD\Fall2023\LWE\ruben3.wav")
+    "data/input_audio.wav")
 times = np.linspace(0, n_samples / sample_freq, num=n_samples)
 
 # Convert audio to binary message
@@ -35,14 +35,14 @@ decrypted_binary = decrypt_signal(encrypted_signal, private_key, public_A, q)
 decryption_time = time.time() - start_time
 
 # Save encrypted and decrypted audio
-save_audio(r"C:\Users\ruben\Documents\NAU\PhD\Fall2023\LWE\LWE_encrypted_audio.wav",
+save_audio("data/output/LWE_encrypted_audio.wav",
            sample_freq, encrypted_signal.astype(np.int16))
-save_audio(r"C:\Users\ruben\Documents\NAU\PhD\Fall2023\LWE\LWE_decrypted_audio.wav",
+save_audio("data/output/LWE_decrypted_audio.wav",
            sample_freq, decrypted_binary * signal_array)
 
 # Plot results
 plot_signals(times, signal_array, encrypted_signal,
-             decrypted_binary * signal_array, save_path=r"C:\Users\ruben\Documents\NAU\PhD\Fall2023\LWE\plot.png")
+             decrypted_binary * signal_array, save_path="data/output/plot.png")
 
 # Display timing results
 print(f"Encryption time: {encryption_time:.4f} seconds")
