@@ -40,6 +40,7 @@ pip install -r requirements.txt
 1. Load your audio file (input_audio.wav).
 2. Run main.py to encrypt and decrypt the audio.
 3. View the generated plot and listen to encrypted_audio.wav and decrypted_audio.wav in data/output/.
+   
 **Plotting**
 1. The plot_signals function in plotting.py generates a side-by-side comparison of the original, encrypted, and decrypted audio signals.
 
